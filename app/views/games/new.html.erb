@@ -1,0 +1,15 @@
+<h1>New Game!</h1>
+
+<h2 class = "game-letters">
+	<%= @display_letters %>
+</h2>
+
+<form action="/score" method="post">
+	<label>What is the longest word you can find?</label>
+	<br>
+  <input type="text" name="word" placeholder="Your word">
+  <input type="submit" value="Play">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %> <!-- params[:authenticity_token] -->
+  <%= hidden_field_tag :letters, @display_letters %>
+
+</form> 
